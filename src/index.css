@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ----------------------- 设置全局样式 ----------------------- */
+@layer base {
+  button{
+    @apply border border-black rounded-xl px-5 py-1
+  }
+  body{
+    @apply bg-gradient-to-tl from-amber-100 to-blue-300 
+  }
+}
