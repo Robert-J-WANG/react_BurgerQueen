@@ -1,8 +1,8 @@
-export const data = [
+export const menuItemsData = [
   {
     id: 1,
     name: "Double Cheeseburger",
-    category: "burger",
+    category: "burgers",
     image:
       "https://images.unsplash.com/photo-1607013251379-e6eecfffe234?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60",
     price: 9.99,
@@ -10,7 +10,7 @@ export const data = [
   {
     id: 2,
     name: "Bacon Cheeseburger",
-    category: "burger",
+    category: "burgers",
     image:
       "https://images.unsplash.com/photo-1553979459-d2229ba7433b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGJ1cmdlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60",
     price: 12.99,
@@ -18,7 +18,7 @@ export const data = [
   {
     id: 3,
     name: "Mushroom Burger",
-    category: "burger",
+    category: "burgers",
     image:
       "https://images.unsplash.com/photo-1608767221051-2b9d18f35a2f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1cmdlcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60",
     price: 7.99,
@@ -26,7 +26,7 @@ export const data = [
   {
     id: 4,
     name: "Loaded Burger",
-    category: "burger",
+    category: "burgers",
     image:
       "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1400&q=60",
     price: 8.99,
@@ -66,7 +66,7 @@ export const data = [
   {
     id: 9,
     name: "Kale Salad",
-    category: "salad",
+    category: "salads",
     image:
       "https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c2FsYWQlMjBjZWFzYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
     price: 11.5,
@@ -74,7 +74,7 @@ export const data = [
   {
     id: 10,
     name: "Ceasar Salad",
-    category: "salad",
+    category: "salads",
     image:
       "https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c2FsYWQlMjBjZWFzYXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
     price: 4.99,
@@ -82,7 +82,7 @@ export const data = [
   {
     id: 11,
     name: "Loaded Salad",
-    category: "salad",
+    category: "salads",
     image:
       "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsYWR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
     price: 6.99,
@@ -90,7 +90,7 @@ export const data = [
   {
     id: 12,
     name: "Fruit Salad",
-    category: "salad",
+    category: "salads",
     image:
       "https://images.unsplash.com/photo-1564093497595-593b96d80180?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZnJ1aXQlMjBzYWxhZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
     price: 7.99,
@@ -128,6 +128,23 @@ export const data = [
     price: 15.0,
   },
 ];
+
+export const filterData = {
+  type: [
+    { id: 1, type: "All" },
+    { id: 2, type: "Burgers" },
+    { id: 3, type: "Pizza" },
+    { id: 4, type: "Salads" },
+    { id: 5, type: "Chicken" },
+  ],
+  price: [
+    { id: 1, price: 5 },
+    { id: 2, price: 10 },
+    { id: 3, price: 15 },
+    { id: 4, price: 20 },
+    { id: 5, price: 25 },
+  ],
+};
 
 export const categories = [
   {

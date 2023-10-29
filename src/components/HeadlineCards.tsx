@@ -2,19 +2,19 @@ import { headlineCards } from "@/data/data.js";
 
 const HeadlineCards = () => {
   return (
-    <div className="max-w-[1640px] mx-auto p-4 py-12 grid md:grid-cols-3 gap-6">
+    <div className="grid w-full gap-6 p-4 py-12 md:grid-cols-3">
       {/* Card */}
       {headlineCards.map((item) => {
         return (
           <div
             key={item.id}
-            className="rounded-xl relative hover:scale-105 duration-300"
+            className="relative duration-300 rounded-xl hover:scale-105"
           >
             {/* Overlay */}
-            <div className="absolute w-full h-full bg-black/50 rounded-xl text-white">
-              <p className="font-bold text-2xl px-2 pt-4">{item.title}</p>
+            <div className="absolute w-full h-full text-white bg-black/50 rounded-xl">
+              <p className="px-2 pt-4 text-2xl font-bold">{item.title}</p>
               <p className="px-2">{item.content}</p>
-              <button className="border-white bg-white text-black mx-2 absolute bottom-4">
+              <button className="absolute mx-2 text-black bg-white border-white bottom-4">
                 Order Now
               </button>
             </div>
