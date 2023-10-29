@@ -6,6 +6,7 @@ type TmenuItem = {
   category: string;
   image: string;
   price: number;
+  desc: string;
 };
 
 type TfilterByType = {
@@ -15,4 +16,13 @@ type TfilterByType = {
 type TfilterByPrice = {
   id: number;
   price: number;
+};
+
+type TCartItem = {
+  id: string;
+  name: string;
+  price: number;
+  size: string;
+  count: number;
+  image: string;
 };

@@ -1,17 +1,16 @@
 import { Navbar } from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import HeadlineCards from "@/components/HeadlineCards";
-import Food from "@/components/Food";
-import Category from "./components/Category";
+import { Home } from "@/pages/Home";
+import { FoodCard } from "@/pages/FoodCard";
+import { Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (
     <div className="max-w-[1418px] mx-auto ">
       <Navbar />
-      <Hero />
-      <HeadlineCards />
-      <Food />
-      <Category />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/foodCard" element={<FoodCard />} />
+      </Routes>
     </div>
   );
 };

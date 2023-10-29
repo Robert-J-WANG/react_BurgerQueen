@@ -4,8 +4,11 @@ import {
   filterByType,
   setMenuItems,
   useMenuItems,
-} from "@/stores/menuItem";
+} from "@/stores/foodMenuStore";
 import { formatCurrency } from "@/utils/formatCurrency";
+import { Link } from "react-router-dom";
+import { FoodCard } from "../pages/FoodCard";
+import { setFoodCard } from "@/stores/foodCardStore";
 
 const Food = () => {
   const menuItems = useMenuItems((state) => state.menuItems);
@@ -64,9 +67,13 @@ const Food = () => {
       {/* Display foods */}
       <div className="grid grid-cols-2 gap-10 pt-10 lg:grid-cols-3">
         {menuItems!.map((item) => (
-          <div
+          <Link
             key={item.id}
             className="duration-300 border rounded-lg shadow-lg cursor-pointer bg-slate-50 hover:scale-105"
+            to="/FoodCard"
+            onClick={() => {
+              setFoodCard(item);
+            }}
           >
             <img
               src={item.image}
@@ -81,7 +88,7 @@ const Food = () => {
                 </span>
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

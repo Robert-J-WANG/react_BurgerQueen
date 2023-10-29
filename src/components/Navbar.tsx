@@ -5,22 +5,26 @@ import {
   AiOutlineSearch,
 } from "react-icons/ai";
 import { BsFillCartFill, BsFillSaveFill } from "react-icons/bs";
-import { TbTruckDelivery } from "react-icons/tb";
+import { TbH3, TbTruckDelivery } from "react-icons/tb";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { MdFavorite, MdHelp } from "react-icons/md";
-import { useState } from "react";
+import { setIsOpen, setNav, useCartStore } from "@/stores/cartStore";
+import { CartItem } from "./CartItem.tsx";
 
 export const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  const nav = useCartStore((state) => state.nav);
+  const isOpen = useCartStore((state) => state.isOpen);
+  const totalCount = useCartStore((state) => state.totalCount);
+  console.log(totalCount);
   return (
     <div className="flex items-center justify-between p-4">
       {/* Left side */}
-      <div className="flex items-center">
-        <div className="cursor-pointer" onClick={() => setNav(!nav)}>
-          <AiOutlineMenu size={30} />
+      <div className="flex items-center gap-5">
+        <div className="cursor-pointer" onClick={setNav}>
+          <AiOutlineMenu size={40} />
         </div>
         <h1 className="px-2 text-2xl sm:text-3xl lg:text-4xl">
-          Burger <span className="font-bold">Queen</span>
+          Burger<span className="font-bold">Queen</span>
         </h1>
         <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 text-[14px]">
           <p className="p-2 text-white bg-black rounded-full">Delivery</p>
@@ -38,8 +42,12 @@ export const Navbar = () => {
         />
       </div>
       {/* Cart button */}
-      <button className="items-center hidden py-2 text-white bg-black rounded-full md:flex">
-        <BsFillCartFill size={20} className="mr-2" /> Cart
+      <button
+        className="items-center hidden py-2 text-white bg-black rounded-full md:flex"
+        onClick={setIsOpen}
+      >
+        <BsFillCartFill size={30} className="mr-2" /> My Cart ({" "}
+        <span>{totalCount}</span> )
       </button>
 
       {/* Mobile Menu */}
@@ -59,12 +67,12 @@ export const Navbar = () => {
         }
       >
         <AiOutlineClose
-          size={30}
+          size={40}
           className="absolute cursor-pointer right-4 top-4"
-          onClick={() => setNav(!nav)}
+          onClick={setNav}
         />
         <h2 className="p-4 text-2xl">
-          Burger <span className="font-bold">Queen</span>
+          Burger<span className="font-bold">Queen</span>
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800">
@@ -91,6 +99,34 @@ export const Navbar = () => {
             </li>
           </ul>
         </nav>
+      </div>
+
+      {/* shopping cart drawer menu */}
+      {/* Overlay */}
+      {isOpen ? (
+        <div className="fixed top-0 left-0 z-10 w-full h-screen bg-gray-700/80"></div>
+      ) : (
+        ""
+      )}
+
+      <div
+        className={
+          isOpen
+            ? "fixed top-0 right-0 w-[600px] h-screen  bg-white z-10 duration-500 p-4 "
+            : "fixed top-0 right-[-100%] w-[600px] h-screen bg-white z-10 duration-500"
+        }
+      >
+        <AiOutlineClose
+          size={40}
+          className="absolute cursor-pointer right-4"
+          onClick={setIsOpen}
+        />
+        <h1 className="text-3xl font-black text-orange-500">Your Cart</h1>
+        {totalCount === 0 ? (
+          <h1 className="m-4 text-xl text-red-600">Your Cart is empty!</h1>
+        ) : (
+          <CartItem />
+        )}
       </div>
     </div>
   );

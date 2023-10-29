@@ -6,9 +6,9 @@
 /* ----------------------- 设置全局样式 ----------------------- */
 @layer base {
   button{
-    @apply border border-black rounded-xl px-5 py-1
+    @apply border border-black rounded-xl px-5 py-2 hover:bg-orange-600 hover:text-white hover:border-orange-600
   }
   body{
-    @apply bg-gradient-to-tl from-amber-100 to-blue-300 
+    @apply bg-gradient-to-tl from-amber-100 to-blue-300 min-h-screen
   }
 }
