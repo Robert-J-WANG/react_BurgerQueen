@@ -15,7 +15,6 @@ export const Navbar = () => {
   const nav = useCartStore((state) => state.nav);
   const isOpen = useCartStore((state) => state.isOpen);
   const totalCount = useCartStore((state) => state.totalCount);
-  console.log(totalCount);
   return (
     <div className="flex items-center justify-between p-4">
       {/* Left side */}

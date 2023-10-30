@@ -7,7 +7,7 @@ import { useFoodCard } from "./foodCardStore";
 const initState = {
   cartItems: [] as TCartItem[],
   isOpen: false,
-  totalCount: 1,
+  totalCount: 0,
   totalPrice: 0,
   nav: false,
 };
@@ -39,28 +39,29 @@ export const setIsOpen = () => {
   });
 };
 
-export const addToCart = (selectedSize: string) => {
-  const foodItem = useFoodCard.getState().foodCard;
+export const addToCart = (selectedItem: TmenuItem) => {
   const selectedPrice = useFoodCard.getState().selectedPrice;
+  const selectedSize = useFoodCard.getState().selectedSize;
   if (selectedSize === "") {
     alert("Please select a size");
   }
   useCartStore.setState((state) => {
-    const sizeIndex = state.cartItems.findIndex(
-      (item) => item.size === selectedSize
+    const itemIndex = state.cartItems.findIndex(
+      (item) => item.data_id === selectedItem.id && item.size === selectedSize
     );
-    if (sizeIndex === -1) {
+    if (itemIndex !== -1) {
+      state.cartItems[itemIndex].count++;
+    } else {
       const updatedItem: TCartItem = {
         id: nanoid(),
-        image: foodItem.image,
-        name: foodItem.name,
+        data_id: selectedItem.id,
+        image: selectedItem.image,
+        name: selectedItem.name,
         count: 1,
         price: selectedPrice,
         size: selectedSize,
       };
       state.cartItems.push(updatedItem);
-    } else {
-      state.cartItems[sizeIndex].count++;
     }
     state.totalCount = updateTotalCount(state.cartItems);
     state.totalPrice = updateTotalPrice(state.cartItems);

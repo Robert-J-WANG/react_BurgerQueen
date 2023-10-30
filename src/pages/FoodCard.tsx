@@ -4,8 +4,8 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { Link } from "react-router-dom";
 
 export const FoodCard = () => {
-  // const foodCard = useFoodCard((state) => state.foodCard);
-  const { name, image, price, desc } = useFoodCard((state) => state.foodCard);
+  const foodCard = useFoodCard((state) => state.foodCard);
+  const { name, image, price, desc } = foodCard;
   const sizeOptions = useFoodCard((state) => state.sizeOptions);
   const selectedSize = useFoodCard((state) => state.selectedSize);
   const selectedPrice = useFoodCard((state) => state.selectedPrice);
@@ -41,7 +41,7 @@ export const FoodCard = () => {
             </ul>
           </div>
 
-          <button className="text-2xl" onClick={() => addToCart(selectedSize)}>
+          <button className="text-2xl" onClick={() => addToCart(foodCard)}>
             Order Now
           </button>
         </div>

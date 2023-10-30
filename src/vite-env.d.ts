@@ -20,6 +20,7 @@ type TfilterByPrice = {
 
 type TCartItem = {
   id: string;
+  data_id: number;
   name: string;
   price: number;
   size: string;
