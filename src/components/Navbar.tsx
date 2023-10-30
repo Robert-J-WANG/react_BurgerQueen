@@ -111,8 +111,8 @@ export const Navbar = () => {
       <div
         className={
           isOpen
-            ? "fixed top-0 right-0 w-[600px] h-screen  bg-white z-10 duration-500 p-4 "
-            : "fixed top-0 right-[-100%] w-[600px] h-screen bg-white z-10 duration-500"
+            ? "fixed top-0 right-0 w-[500px] h-screen  bg-white z-10 duration-500 p-4 overflow-y-scroll scroll-smooth"
+            : "fixed top-0 right-[-100%] w-[500px] h-screen bg-white z-10 duration-500"
         }
       >
         <AiOutlineClose

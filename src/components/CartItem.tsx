@@ -16,11 +16,11 @@ export const CartItem = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
   return (
     <div className="flex flex-col gap-4 my-4 ">
-      <ul className="overflow-y-scroll">
+      <ul>
         {cartItems.map((cartItem) => (
           <li
             key={cartItem.id}
-            className="w-full flex justify-between gap-5 items-center mb-4 h-[200px] bg-orange-100 rounded-xl overflow-hidden "
+            className="w-full flex justify-between gap-5 items-center mb-4 h-[160px] bg-orange-100 rounded-xl overflow-hidden "
           >
             <img
               src={cartItem.image}
