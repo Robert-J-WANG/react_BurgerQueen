@@ -10,6 +10,7 @@ const initState = {
   totalCount: 0,
   totalPrice: 0,
   nav: false,
+  isOrdered: false,
 };
 
 export const useCartStore = create(
@@ -44,6 +45,7 @@ export const addToCart = (selectedItem: TmenuItem) => {
   const selectedSize = useFoodCard.getState().selectedSize;
   if (selectedSize === "") {
     alert("Please select a size");
+    return;
   }
   useCartStore.setState((state) => {
     const itemIndex = state.cartItems.findIndex(
@@ -65,6 +67,8 @@ export const addToCart = (selectedItem: TmenuItem) => {
     }
     state.totalCount = updateTotalCount(state.cartItems);
     state.totalPrice = updateTotalPrice(state.cartItems);
+    state.isOrdered = true;
+    closeMessage();
   });
 };
 
@@ -96,6 +100,14 @@ export const removeItem = (id: string) => {
     // 删掉所有的item时，关闭购物车
     state.isOpen = state.cartItems.length === 0 ? false : true;
   });
+};
+
+export const closeMessage = () => {
+  setTimeout(() => {
+    useCartStore.setState((state) => {
+      state.isOrdered = false;
+    });
+  }, 1500);
 };
 
 const updateTotalCount = (cartItems: TCartItem[]) => {
