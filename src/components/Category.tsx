@@ -3,11 +3,11 @@ import { categories } from "@/data/data";
 const Category = () => {
   return (
     <div className="w-full px-4 py-12 ">
-      <h1 className="my-4 text-4xl font-bold text-center text-orange-600">
-        <span className="py-2 duration-500 hover:border-b-4 hover:border-black/50">
-          Menu Items Categories
-        </span>
+      <h1 className="flex flex-col gap-4 my-4 text-4xl font-bold text-center text-orange-600 ">
+        <span className="py-2">Menu Items Categories</span>
+        <progress className="w-64 mx-auto progress"></progress>
       </h1>
+
       {/* Categories */}
       <div className="grid gap-6 py-6 max-w-[200px] xs:max-w-full xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto">
         {categories.map((item, index) => (

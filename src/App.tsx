@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { useCartStore } from "@/stores/cartStore";
 import { useEffect } from "react";
 import { setMenuItems } from "@/stores/foodMenuStore";
+import { Footer } from "@/components/Footer";
 
 export const App = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ export const App = () => {
           <Route path="/react_BurgerQueen/foodCard" element={<FoodCard />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 };

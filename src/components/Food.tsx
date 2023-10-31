@@ -19,10 +19,9 @@ const Food = () => {
 
   return (
     <div className="w-full px-4 py-12 ">
-      <h1 className="my-4 text-4xl font-bold text-center text-orange-600 ">
-        <span className="py-2 duration-500 hover:border-b-4 hover:border-black/50">
-          Top Rated Menu Items
-        </span>
+      <h1 className="flex flex-col gap-4 my-4 text-4xl font-bold text-center text-orange-600 ">
+        <span className="py-2">Top Rated Menu Items</span>
+        <progress className="w-64 mx-auto progress"></progress>
       </h1>
 
       {/* Filter Row */}
