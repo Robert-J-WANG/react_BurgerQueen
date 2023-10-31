@@ -9,14 +9,14 @@ const Category = () => {
         </span>
       </h1>
       {/* Categories */}
-      <div className="grid gap-6 py-6 sm:grid-cols-2 md:grid-cols-4">
+      <div className="grid gap-6 py-6 max-w-[200px] xs:max-w-full xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto">
         {categories.map((item, index) => (
           <div
             key={index}
             className="flex items-center justify-between p-4 bg-gray-100 rounded-lg"
           >
-            <h2 className="font-bold sm:text-xl">{item.name}</h2>
-            <img src={item.image} alt={item.name} className="w-20" />
+            <h2 className="font-bold md:text-xl">{item.name}</h2>
+            <img src={item.image} alt={item.name} className="w-16 md:w-20" />
           </div>
         ))}
       </div>
