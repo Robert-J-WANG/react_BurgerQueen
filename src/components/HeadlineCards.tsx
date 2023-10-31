@@ -15,7 +15,7 @@ const HeadlineCards = () => {
               <p className="px-2 pt-4 text-2xl font-bold">{item.title}</p>
               <p className="px-2">{item.content}</p>
               <button className="absolute mx-2 text-black bg-white border-white bottom-4">
-                Order Now
+                Read More
               </button>
             </div>
             <img

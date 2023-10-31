@@ -20,24 +20,29 @@ export const CartItem = () => {
         {cartItems.map((cartItem) => (
           <li
             key={cartItem.id}
-            className="w-full flex justify-between gap-5 items-center mb-4 h-[160px] bg-orange-100 rounded-xl overflow-hidden "
+            className="w-full flex  mb-4 h-[160px] bg-orange-100 rounded-xl overflow-hidden "
           >
-            <img
-              src={cartItem.image}
-              alt="/"
-              className="object-cover w-[200px] h-full "
-            />
-            <div className="flex flex-col gap-5">
-              <h2 className="text-xl ">{cartItem.name}</h2>
-              <p className="text-xl ">
-                {cartItem.count} x{" "}
-                <span className="font-bold">
-                  {formatCurrency(cartItem.price)}
-                </span>
-              </p>
-              <p className="text-xl">size: {cartItem.size}</p>
+            <div className="flex basis-11/12">
+              <div className="mr-2 basis-2/5">
+                <img
+                  src={cartItem.image}
+                  alt="/"
+                  className="object-cover w-[200px] h-full "
+                />
+              </div>
+              <div className="flex flex-col justify-center gap-5 md:text-xl basis-3/5">
+                <h2>{cartItem.name}</h2>
+                <p>
+                  {cartItem.count} x{" "}
+                  <span className="font-bold">
+                    {formatCurrency(cartItem.price)}
+                  </span>
+                </p>
+                <p>size: {cartItem.size}</p>
+              </div>
             </div>
-            <div className="flex flex-col items-center gap-5 pr-2">
+
+            <div className="flex flex-col items-center justify-center gap-5 basis-1/12">
               <MdAddShoppingCart
                 className="text-blue-700"
                 size={30}
@@ -58,7 +63,7 @@ export const CartItem = () => {
         ))}
       </ul>
 
-      <div className="flex justify-between text-3xl">
+      <div className="flex justify-between text-xl md:text-2xl lg:text-3xl">
         <p className="font-black text-orange-500">Total Price :</p>
         <p className="font-bold">{formatCurrency(totalPrice)}</p>
       </div>

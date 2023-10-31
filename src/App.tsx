@@ -22,12 +22,14 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="max-w-[1418px] mx-auto ">
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/foodCard" element={<FoodCard />} />
-      </Routes>
-    </div>
+      <div className="container mt-20">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/foodCard" element={<FoodCard />} />
+        </Routes>
+      </div>
+    </>
   );
 };

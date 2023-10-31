@@ -7,7 +7,6 @@ import {
 } from "@/stores/foodMenuStore";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { Link } from "react-router-dom";
-import { FoodCard } from "../pages/FoodCard";
 import { setFoodCard } from "@/stores/foodCardStore";
 
 const Food = () => {
@@ -21,8 +20,10 @@ const Food = () => {
 
   return (
     <div className="w-full px-4 py-12 ">
-      <h1 className="text-4xl font-bold text-center text-orange-600">
-        Top Rated Menu Items
+      <h1 className="my-4 text-4xl font-bold text-center text-orange-600 ">
+        <span className="py-2 duration-500 hover:border-b-4 hover:border-black/50">
+          Top Rated Menu Items
+        </span>
       </h1>
 
       {/* Filter Row */}
@@ -65,11 +66,11 @@ const Food = () => {
       </div>
 
       {/* Display foods */}
-      <div className="grid grid-cols-2 gap-10 pt-10 lg:grid-cols-3">
+      <div className="grid gap-10 pt-10 md:grid-cols-2 xl:grid-cols-3">
         {menuItems!.map((item) => (
           <Link
             key={item.id}
-            className="duration-300 border rounded-lg shadow-lg cursor-pointer bg-slate-50 hover:scale-105"
+            className="duration-300 border rounded-lg shadow-lg cursor-pointer bg-slate-50 hover:scale-105 "
             to="/FoodCard"
             onClick={() => {
               setFoodCard(item);
