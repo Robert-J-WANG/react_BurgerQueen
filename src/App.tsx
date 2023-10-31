@@ -31,7 +31,8 @@ export const App = () => {
       <div className="container mt-20">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/foodCard" element={<FoodCard />} />
+          <Route path="/react_BurgerQueen/" element={<Home />} />
+          <Route path="/react_BurgerQueen/foodCard" element={<FoodCard />} />
         </Routes>
       </div>
     </>
