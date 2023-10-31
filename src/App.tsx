@@ -2,10 +2,14 @@ import { Navbar } from "@/components/Navbar";
 import { Home } from "@/pages/Home";
 import { FoodCard } from "@/pages/FoodCard";
 import { Route, Routes } from "react-router-dom";
-import { useCartStore } from "./stores/cartStore";
+import { useCartStore } from "@/stores/cartStore";
 import { useEffect } from "react";
+import { setMenuItems } from "@/stores/foodMenuStore";
 
 export const App = () => {
+  useEffect(() => {
+    setMenuItems();
+  }, []);
   //rbt:使用zustand的订阅功能，通常写进useEffect钩子中
   /* ------------ 订阅isOpen变量来控制body垂直滚动条的显示和隐藏 ------------ */
   //  购物车打开时隐藏，否则显示
