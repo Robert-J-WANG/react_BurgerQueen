@@ -1,8 +1,7 @@
-import { useEffect } from "react";
 import {
   filterByPrice,
   filterByType,
-  setMenuItems,
+  // setMenuItems,
   useMenuItems,
 } from "@/stores/foodMenuStore";
 import { formatCurrency } from "@/utils/formatCurrency";
@@ -14,9 +13,9 @@ const Food = () => {
   const filterType = useMenuItems((state) => state.filterItems.type);
   const filterPrice = useMenuItems((state) => state.filterItems.price);
 
-  useEffect(() => {
-    setMenuItems();
-  }, []);
+  // useEffect(() => {
+  //   setMenuItems();
+  // }, []);
 
   return (
     <div className="w-full px-4 py-12 ">
