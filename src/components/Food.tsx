@@ -70,7 +70,7 @@ const Food = () => {
           <Link
             key={item.id}
             className="duration-300 border rounded-lg shadow-lg cursor-pointer bg-slate-50 hover:scale-105 "
-            to="/FoodCard"
+            to="/react_BurgerQueen/FoodCard"
             onClick={() => {
               setFoodCard(item);
             }}

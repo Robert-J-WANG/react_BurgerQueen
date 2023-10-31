@@ -24,7 +24,7 @@ export const Navbar = () => {
           <div className="cursor-pointer" onClick={setNav}>
             <AiOutlineMenu size={40} />
           </div>
-          <Link to="/">
+          <Link to="/react_BurgerQueen/">
             <h1 className="hidden px-2 text-2xl md:block sm:text-3xl lg:text-4xl">
               Burger<span className="font-bold">Queen</span>
             </h1>

@@ -49,7 +49,10 @@ export const FoodCard = () => {
 
       {/* back button */}
       <div className="relative">
-        <Link to="/" className="absolute cursor-pointer right-4">
+        <Link
+          to="/react_BurgerQueen/"
+          className="absolute cursor-pointer right-4"
+        >
           <button className="m-1 text-orange-600 border-orange-600 hover:bg-orange-600 hover:text-white">
             back
           </button>
