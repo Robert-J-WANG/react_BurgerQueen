@@ -2,6 +2,7 @@ import { addToCart, useCartStore } from "@/stores/cartStore";
 import { selectSize, useFoodCard } from "@/stores/foodCardStore";
 import { formatCurrency } from "@/utils/formatCurrency";
 import { useEffect, useState } from "react";
+import { AiFillCaretLeft } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const FoodCard = () => {
@@ -27,7 +28,7 @@ export const FoodCard = () => {
 
   return (
     <>
-      <div className=" grid gap-4 lg:gap-10 p-4 my-10 lg:grid-cols-2 max-w-[600px] lg:w-full lg:max-w-full mx-auto">
+      <div className=" grid gap-4 lg:gap-10  p-4 my-10 lg:grid-cols-2 max-w-[600px] lg:w-full lg:max-w-full mx-auto ">
         {/* leftside */}
         <div className="min-h-[600px] bg-yellow-500 max-h-[600px] rounded-3xl overflow-hidden">
           <img src={image} alt="/" className="object-cover w-full h-full" />
@@ -61,24 +62,13 @@ export const FoodCard = () => {
             Order Now
           </button>
 
-          {/* alert message box */}
+          {/* alert message box 使用daisyui toast */}
 
           {flag ? (
-            <div className="fixed w-[300px] top-32 right-32 alert alert-success ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 stroke-current shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span>Your order add successfully!</span>
+            <div className="toast toast-top toast-end top-20">
+              <div className="alert alert-success">
+                <span>Your order add successfully!</span>
+              </div>
             </div>
           ) : (
             ""
@@ -90,11 +80,9 @@ export const FoodCard = () => {
       <div className="relative">
         <Link
           to="/react_BurgerQueen/"
-          className="absolute cursor-pointer right-4"
+          className="absolute cursor-pointer right-4 -top-8"
         >
-          <button className="w-64 text-orange-600 rounded-full btn hover:bg-orange-600">
-            back
-          </button>
+          <AiFillCaretLeft size={60} className="bg-orange-600 rounded-full" />
         </Link>
       </div>
     </>
